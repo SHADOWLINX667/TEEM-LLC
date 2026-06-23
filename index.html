@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TEEM LLC</title>
+
+  <!-- ============================================================
+       FONTS
+       - "Cormorant Garamond" for headings: refined, elegant
+       - "DM Sans" for body text: modern, readable
+  ============================================================ -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- ============================================================
+       STYLESHEET
+       All visual styling lives in teem-llc.css
+       Keep this file as pure structure (HTML only)
+  ============================================================ -->
+  <link rel="stylesheet" href="teem-llc.css"/>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       Fixed top bar — links scroll to each section on the page.
+       Add more <li> items here as the site grows.
+  ============================================================ -->
+  <nav>
+    <a href="#hero" class="nav-logo">TEEM</a>
+    <ul class="nav-links">
+      <li><a href="#reports">Reports</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="mailto:info@emetva.com">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO SECTION
+       The first thing visitors see — company name and intro.
+       Edit the tagline text here to change what it says.
+  ============================================================ -->
+  <section id="hero">
+    <p class="hero-eyebrow">Established · The Gambia</p>
+    <h1 class="hero-title">TEEM <span>LLC</span></h1>
+    <p class="hero-tagline">A family enterprise built on trust, vision, and enduring partnerships.</p>
+    <div class="hero-cta">
+      <!-- These buttons scroll down to the two main sections -->
+      <a href="#reports" class="btn btn-primary">View Reports</a>
+      <a href="#photos" class="btn btn-secondary">Browse Photos</a>
+    </div>
+    <!-- Animated arrow telling the user to scroll down -->
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <span>↓</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       REPORTS SECTION
+       Each .report-card block = one document entry.
+       To add a report: copy any .report-card div and paste it
+       inside .reports-grid. Update the title, date, category,
+       and change href="#" to your actual file path.
+  ============================================================ -->
+  <section id="reports">
+    <div class="section">
+
+      <div class="section-label"><span>Documents</span></div>
+      <h2 class="section-title">Reports</h2>
+      <p class="section-desc">Official documents, financial summaries, and internal reports for the family LLC.</p>
+
+      <!-- REPORTS GRID — add or remove .report-card blocks as needed -->
+      <div class="reports-grid">
+
+        <!-- REPORT CARD 1 -->
+        <div class="report-card">
+          <div class="report-icon">📄</div>
+          <div class="report-category">Valuation</div>
+          <div class="report-title">Lamin Plot Valuation Report</div>
+          <div class="report-date">june 2026</div>
+          <a href="Report for Lamin.pdf" class="report-link" target="_blank">View Report →</a>
+        </div>
+
+       
+      </div><!-- end .reports-grid -->
+    </div>
+  </section>
+
+  <!-- Thin gold line separating the two sections -->
+  <hr class="section-divider"/>
+
+
+  <!-- ============================================================
+       PHOTOS SECTION
+       Each .photo-tile block = one image slot.
+       To add a real photo: replace the <div class="photo-tile-inner">
+       placeholder with an actual <img> tag like:
+         <img src="photos/your-photo.jpg" alt="Description"
+              style="width:100%;height:100%;object-fit:cover;">
+       Update the <span class="photo-label"> text to caption it.
+  ============================================================ -->
+  <section id="photos">
+    <div class="section">
+
+      <div class="section-label"><span>Gallery</span></div>
+      <h2 class="section-title">Photos</h2>
+      <p class="section-desc">A visual record of our ventures, milestones, and family story.</p>
+
+      <!-- PHOTOS GRID — add .photo-tile blocks for each image -->
+      <div class="photos-grid">
+
+        <!-- PHOTO TILE 1 (tall — spans 2 rows, set in CSS) -->
+        <div class="photo-tile" onclick="openLightbox('image1.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image1.jpeg" alt="image 1">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+        <div class="photo-tile" onclick="openLightbox('image2.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image2.jpeg" alt="image 2">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image3.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image3.jpeg" alt="image 3">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image4.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image4.jpeg" alt="image 4">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image5.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image5.jpeg" alt="image 5">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image6.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image6.jpeg" alt="image 6">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image7.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image7.jpeg" alt="image 7">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image8.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image8.jpeg" alt="image 8">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image9.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image9.jpeg" alt="image 9">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image10.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image10.jpeg" alt="image 10">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image11.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image11.jpeg" alt="image 11">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image12.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image12.jpeg" alt="image 12">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image13.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image13.jpeg" alt="image 13">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image14.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image14.jpeg" alt="image 14">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image15.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image15.jpeg" alt="image 15">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image16.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image16.jpeg" alt="image 16">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image17.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image17.jpeg" alt="image 17">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image18.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image18.jpeg" alt="image 18">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image19.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image19.jpeg" alt="image 19">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image20.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image20.jpeg" alt="image 20">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image21.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image21.jpeg" alt="image 21">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+        <div class="photo-tile" onclick="openLightbox('image22.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image22.jpeg" alt="image 22">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+        <div class="photo-tile" onclick="openLightbox('image23.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image23.jpeg" alt="image 23">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+<div class="photo-tile" onclick="openLightbox('image24.jpeg')">
+          <!-- Replace this placeholder div with a real <img> tag -->
+          <img src="image24.jpeg" alt="image 24">
+          <!-- Caption shown on hover -->
+          <div class="photo-overlay">
+            <span class="photo-label">lamin plot</span>
+          </div>
+        </div>
+
+
+
+
+       
+
+      </div><!-- end .photos-grid -->
+
+     
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       Update the year, company name, and email as needed.
+  ============================================================ -->
+  <footer>
+    <div class="footer-brand">TEEM LLC</div>
+    <div>© 2025 TEEM LLC · The Gambia · All rights reserved</div>
+    <div>info@emetva.com</div>
+  </footer>
+
+  <!-- ============================================================
+     LIGHTBOX OVERLAY
+     Hidden by default. Clicking a photo tile triggers it.
+     Click outside the image or the X button to close it.
+============================================================ -->
+<div id="lightbox">
+  <button id="lightbox-close">✕</button>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+<!-- ============================================================
+     LIGHTBOX SCRIPT
+     openLightbox(src) — sets the image and shows the overlay
+     Clicking the overlay background closes it
+     Clicking the X button closes it
+============================================================ -->
+<script>
+  // Opens the lightbox and loads the clicked image
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+
+  // Closes the lightbox
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+  }
+
+  // Close when clicking the dark background (but not the image itself)
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  // Close when clicking the X button
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+
+  // Close when pressing the Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
