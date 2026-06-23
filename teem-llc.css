@@ -483,6 +483,81 @@ footer {
 }
 
 /* ============================================================
+   FOLDER GROUPS — collapsible photo folders in the gallery
+============================================================ */
+
+/* Outer container for each folder */
+.folder-group {
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+/* Clickable header row */
+.folder-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  background: rgba(201,168,76,0.04);
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.folder-header:hover {
+  background: rgba(201,168,76,0.09);
+}
+
+/* Folder emoji icon */
+.folder-icon {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Folder name text */
+.folder-name {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+/* Photo count badge on the right */
+.folder-count {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Arrow that rotates when folder opens */
+.folder-arrow {
+  font-size: 0.7rem;
+  color: var(--gold);
+  transition: transform 0.25s ease;
+  margin-left: 0.5rem;
+}
+
+.folder-group.open .folder-arrow {
+  transform: rotate(90deg);
+}
+
+/* Body is hidden by default, shown when .open is added */
+.folder-body {
+  display: none;
+  padding: 1.25rem;
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+
+.folder-group.open .folder-body {
+  display: block;
+}
+
+/* ============================================================
    LIGHTBOX — full-screen image overlay
    Hidden by default, shown when a photo tile is clicked
 ============================================================ */

@@ -107,231 +107,153 @@
 
       <div class="section-label"><span>Gallery</span></div>
       <h2 class="section-title">Photos</h2>
-      <p class="section-desc">Photos of the land as of june 2026</p>
+      <p class="section-desc">A visual record of our ventures, milestones, and family story.</p>
 
-      <!-- PHOTOS GRID — add .photo-tile blocks for each image -->
-      <div class="photos-grid">
+      <!-- ============================================================
+           FOLDER GROUPS
+           Each .folder-group = one collapsible folder of photos.
+           Click the header to open/close. Add more folders by
+           copying a .folder-group block and updating the name,
+           count, and photo tiles inside.
+      ============================================================ -->
 
-        <!-- PHOTO TILE 1 (tall — spans 2 rows, set in CSS) -->
-        <div class="photo-tile" onclick="openLightbox('image1.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image1.jpeg" alt="image 1">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
+      <!-- FOLDER 1 — images 1–8 -->
+      <div class="folder-group" id="folder1">
+        <div class="folder-header" onclick="toggleFolder('folder1')">
+          <span class="folder-icon">📁</span>
+          <span class="folder-name">Lamin Plot — Set 1</span>
+          <span class="folder-count">8 photos</span>
+          <span class="folder-arrow">▶</span>
+        </div>
+        <div class="folder-body">
+          <div class="photos-grid">
+            <div class="photo-tile" onclick="openLightbox('image1.jpeg')">
+              <img src="image1.jpeg" alt="image 1">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image2.jpeg')">
+              <img src="image2.jpeg" alt="image 2">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image3.jpeg')">
+              <img src="image3.jpeg" alt="image 3">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image4.jpeg')">
+              <img src="image4.jpeg" alt="image 4">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image5.jpeg')">
+              <img src="image5.jpeg" alt="image 5">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image6.jpeg')">
+              <img src="image6.jpeg" alt="image 6">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image7.jpeg')">
+              <img src="image7.jpeg" alt="image 7">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image8.jpeg')">
+              <img src="image8.jpeg" alt="image 8">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
           </div>
         </div>
-        <div class="photo-tile" onclick="openLightbox('image2.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image2.jpeg" alt="image 2">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
+      </div><!-- end folder1 -->
+
+      <!-- FOLDER 2 — images 9–16 -->
+      <div class="folder-group" id="folder2">
+        <div class="folder-header" onclick="toggleFolder('folder2')">
+          <span class="folder-icon">📁</span>
+          <span class="folder-name">Lamin Plot — Set 2</span>
+          <span class="folder-count">8 photos</span>
+          <span class="folder-arrow">▶</span>
+        </div>
+        <div class="folder-body">
+          <div class="photos-grid">
+            <div class="photo-tile" onclick="openLightbox('image9.jpeg')">
+              <img src="image9.jpeg" alt="image 9">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image10.jpeg')">
+              <img src="image10.jpeg" alt="image 10">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image11.jpeg')">
+              <img src="image11.jpeg" alt="image 11">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image12.jpeg')">
+              <img src="image12.jpeg" alt="image 12">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image13.jpeg')">
+              <img src="image13.jpeg" alt="image 13">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image14.jpeg')">
+              <img src="image14.jpeg" alt="image 14">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image15.jpeg')">
+              <img src="image15.jpeg" alt="image 15">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image16.jpeg')">
+              <img src="image16.jpeg" alt="image 16">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
           </div>
         </div>
+      </div><!-- end folder2 -->
 
-        <div class="photo-tile" onclick="openLightbox('image3.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image3.jpeg" alt="image 3">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
+      <!-- FOLDER 3 — images 17–24 -->
+      <div class="folder-group" id="folder3">
+        <div class="folder-header" onclick="toggleFolder('folder3')">
+          <span class="folder-icon">📁</span>
+          <span class="folder-name">Lamin Plot — Set 3</span>
+          <span class="folder-count">8 photos</span>
+          <span class="folder-arrow">▶</span>
+        </div>
+        <div class="folder-body">
+          <div class="photos-grid">
+            <div class="photo-tile" onclick="openLightbox('image17.jpeg')">
+              <img src="image17.jpeg" alt="image 17">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image18.jpeg')">
+              <img src="image18.jpeg" alt="image 18">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image19.jpeg')">
+              <img src="image19.jpeg" alt="image 19">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image20.jpeg')">
+              <img src="image20.jpeg" alt="image 20">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image21.jpeg')">
+              <img src="image21.jpeg" alt="image 21">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image22.jpeg')">
+              <img src="image22.jpeg" alt="image 22">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image23.jpeg')">
+              <img src="image23.jpeg" alt="image 23">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
+            <div class="photo-tile" onclick="openLightbox('image24.jpeg')">
+              <img src="image24.jpeg" alt="image 24">
+              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            </div>
           </div>
         </div>
-
-        <div class="photo-tile" onclick="openLightbox('image4.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image4.jpeg" alt="image 4">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image5.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image5.jpeg" alt="image 5">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image6.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image6.jpeg" alt="image 6">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image7.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image7.jpeg" alt="image 7">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image8.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image8.jpeg" alt="image 8">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image9.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image9.jpeg" alt="image 9">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image10.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image10.jpeg" alt="image 10">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image11.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image11.jpeg" alt="image 11">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image12.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image12.jpeg" alt="image 12">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image13.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image13.jpeg" alt="image 13">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image14.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image14.jpeg" alt="image 14">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image15.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image15.jpeg" alt="image 15">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image16.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image16.jpeg" alt="image 16">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image17.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image17.jpeg" alt="image 17">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image18.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image18.jpeg" alt="image 18">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image19.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image19.jpeg" alt="image 19">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image20.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image20.jpeg" alt="image 20">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image21.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image21.jpeg" alt="image 21">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-        <div class="photo-tile" onclick="openLightbox('image22.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image22.jpeg" alt="image 22">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-        <div class="photo-tile" onclick="openLightbox('image23.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image23.jpeg" alt="image 23">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-<div class="photo-tile" onclick="openLightbox('image24.jpeg')">
-          <!-- Replace this placeholder div with a real <img> tag -->
-          <img src="image24.jpeg" alt="image 24">
-          <!-- Caption shown on hover -->
-          <div class="photo-overlay">
-            <span class="photo-label">lamin plot</span>
-          </div>
-        </div>
-
-
-
-
-       
-
-      </div><!-- end .photos-grid -->
+      </div><!-- end folder3 -->
 
      
 
@@ -364,6 +286,13 @@
      Clicking the overlay background closes it
      Clicking the X button closes it
 ============================================================ -->
+<script>
+  // Opens/closes a folder group
+  function toggleFolder(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+</script>
+
 <script>
   // Opens the lightbox and loads the clicked image
   function openLightbox(src) {
