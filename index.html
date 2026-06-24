@@ -81,7 +81,7 @@
           <div class="report-category">Valuation</div>
           <div class="report-title">Lamin Plot Valuation Report</div>
           <div class="report-date">june 2026</div>
-          <a href="Report for Lamin.pdf" class="report-link" target="_blank">View Report →</a>
+          <a href="Report for Lamin.pdf" class="report-link" target="_blank" rel="noopener noreferrer">View Report →</a>
         </div>
 
        
@@ -246,8 +246,10 @@
      Hidden by default. Clicking a photo tile triggers it.
      Click outside the image or the X button to close it.
 ============================================================ -->
-<div id="lightbox">
-  <button id="lightbox-close">✕</button>
+<div id="lightbox" aria-hidden="true">
+  <button id="lightbox-prev" class="lightbox-nav" aria-label="Previous image">‹</button>
+  <button id="lightbox-next" class="lightbox-nav" aria-label="Next image">›</button>
+  <button id="lightbox-close" aria-label="Close image">✕</button>
   <img id="lightbox-img" src="" alt=""/>
 </div>
 <!-- ============================================================
@@ -264,15 +266,54 @@
 </script>
 
 <script>
-  // Opens the lightbox and loads the clicked image
+  // Build a list of image srcs from the gallery (in DOM order)
+  const galleryImages = Array.from(document.querySelectorAll('.photos-grid img'));
+  const imageSrcs = galleryImages.map(img => img.getAttribute('src'));
+  let currentIndex = -1;
+
+  // Opens the lightbox and loads the clicked image (by src)
   function openLightbox(src) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').classList.add('active');
+    // find the index of the clicked image
+    currentIndex = imageSrcs.indexOf(src);
+    if (currentIndex === -1) {
+      // fallback: try matching by filename ending
+      currentIndex = imageSrcs.findIndex(s => s && s.endsWith(src));
+    }
+    if (currentIndex === -1) currentIndex = 0; // safety
+
+    showImage();
+    const lb = document.getElementById('lightbox');
+    lb.classList.add('active');
+    lb.setAttribute('aria-hidden', 'false');
+    // focus the close button for keyboard users
+    document.getElementById('lightbox-close').focus();
+  }
+
+  // Show the image for currentIndex
+  function showImage() {
+    const imgEl = document.getElementById('lightbox-img');
+    if (currentIndex < 0 || currentIndex >= imageSrcs.length) return;
+    imgEl.src = imageSrcs[currentIndex];
+    imgEl.alt = galleryImages[currentIndex].alt || '';
+  }
+
+  // Navigate previous/next
+  function prevImage() {
+    if (imageSrcs.length === 0) return;
+    currentIndex = (currentIndex - 1 + imageSrcs.length) % imageSrcs.length;
+    showImage();
+  }
+  function nextImage() {
+    if (imageSrcs.length === 0) return;
+    currentIndex = (currentIndex + 1) % imageSrcs.length;
+    showImage();
   }
 
   // Closes the lightbox
   function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('active');
+    lb.setAttribute('aria-hidden', 'true');
     document.getElementById('lightbox-img').src = '';
   }
 
@@ -281,12 +322,21 @@
     if (e.target === this) closeLightbox();
   });
 
+  // Prevent clicks on the image or nav buttons from closing the lightbox
+  document.getElementById('lightbox-img').addEventListener('click', function(e) { e.stopPropagation(); });
+  document.getElementById('lightbox-prev').addEventListener('click', function(e) { e.stopPropagation(); prevImage(); });
+  document.getElementById('lightbox-next').addEventListener('click', function(e) { e.stopPropagation(); nextImage(); });
+
   // Close when clicking the X button
   document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
 
-  // Close when pressing the Escape key
+  // Keyboard navigation: Escape closes, ArrowLeft/ArrowRight navigate
   document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'ArrowRight') nextImage();
   });
 </script>
 
