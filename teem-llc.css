@@ -3,13 +3,13 @@
    whole site in one place
 ============================================================ */
 :root {
-  --gold:       #c9a84c;
-  --gold-light: #e8d5a0;
-  --dark:       #0e0e0e;
-  --mid:        #1c1c1c;
-  --surface:    #242424;
-  --text:       #e8e2d9;
-  --muted:      #8a8478;
+  --gold:       #c15f3c;
+  --gold-light: #d4846a;
+  --dark:       #1a1714;
+  --mid:        #242019;
+  --surface:    #2e2a24;
+  --text:       #f4f3ee;
+  --muted:      #b1ada1;
   --font-head:  'Cormorant Garamond', serif;
   --font-body:  'DM Sans', sans-serif;
 }
@@ -41,9 +41,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 4rem;
-  background: rgba(14,14,14,0.92);
+  background: rgba(26,23,20,0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(193,95,60,0.15);
 }
 
 /* Logo text in the nav */
@@ -97,7 +97,7 @@ nav {
   position: absolute;
   width: 600px; height: 600px;
   border-radius: 50%;
-  border: 1px solid rgba(201,168,76,0.08);
+  border: 1px solid rgba(193,95,60,0.08);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -106,7 +106,7 @@ nav {
   position: absolute;
   width: 900px; height: 900px;
   border-radius: 50%;
-  border: 1px solid rgba(201,168,76,0.04);
+  border: 1px solid rgba(193,95,60,0.04);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -168,10 +168,10 @@ nav {
   cursor: pointer;
 }
 
-/* Solid gold button */
+/* Solid terracotta button */
 .btn-primary {
   background: var(--gold);
-  color: var(--dark);
+  color: var(--text);
   border: none;
 }
 .btn-primary:hover { background: var(--gold-light); }
@@ -183,7 +183,7 @@ nav {
   border: 1px solid var(--gold);
 }
 .btn-secondary:hover {
-  background: rgba(201,168,76,0.08);
+  background: rgba(193,95,60,0.08);
 }
 
 /* Scroll hint arrow at the bottom of the hero */
@@ -218,7 +218,7 @@ nav {
   margin: 0 auto;
 }
 
-/* Gold bar + section label above each heading */
+/* Terracotta bar + section label above each heading */
 .section-label {
   display: flex;
   align-items: center;
@@ -261,7 +261,7 @@ nav {
 /* Divider line between sections */
 .section-divider {
   border: none;
-  border-top: 1px solid rgba(201,168,76,0.1);
+  border-top: 1px solid rgba(193,95,60,0.1);
   margin: 0 2rem;
 }
 
@@ -290,7 +290,7 @@ nav {
   overflow: hidden;
 }
 
-/* Gold accent line that slides in on hover */
+/* Terracotta accent line that slides in on hover */
 .report-card::before {
   content: '';
   position: absolute;
@@ -301,7 +301,7 @@ nav {
 }
 .report-card:hover::before { width: 100%; }
 .report-card:hover {
-  border-color: rgba(201,168,76,0.2);
+  border-color: rgba(193,95,60,0.2);
   transform: translateY(-3px);
 }
 
@@ -391,7 +391,7 @@ nav {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, var(--surface) 0%, #2e2e2e 100%);
+  background: linear-gradient(135deg, var(--surface) 0%, #3a3028 100%);
   transition: transform 0.3s;
 }
 
@@ -401,7 +401,7 @@ nav {
 .photo-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(14,14,14,0.6);
+  background: rgba(26,23,20,0.6);
   display: flex;
   align-items: flex-end;
   padding: 1rem;
@@ -419,7 +419,7 @@ nav {
 /* Upload button below the photo grid */
 .upload-area {
   margin-top: 2rem;
-  border: 1px dashed rgba(201,168,76,0.3);
+  border: 1px dashed rgba(193,95,60,0.3);
   border-radius: 4px;
   padding: 2.5rem;
   text-align: center;
@@ -430,7 +430,7 @@ nav {
 }
 .upload-area:hover {
   border-color: var(--gold);
-  background: rgba(201,168,76,0.03);
+  background: rgba(193,95,60,0.03);
 }
 .upload-icon { font-size: 1.8rem; margin-bottom: 0.5rem; opacity: 0.5; }
 
@@ -440,7 +440,7 @@ nav {
    - Simple closing strip at the bottom of the page
 ============================================================ */
 footer {
-  border-top: 1px solid rgba(201,168,76,0.1);
+  border-top: 1px solid rgba(193,95,60,0.1);
   padding: 2.5rem 4rem;
   display: flex;
   justify-content: space-between;
@@ -488,7 +488,7 @@ footer {
 
 /* Outer container for each folder */
 .folder-group {
-  border: 1px solid rgba(201,168,76,0.15);
+  border: 1px solid rgba(193,95,60,0.15);
   border-radius: 4px;
   margin-bottom: 1.25rem;
   overflow: hidden;
@@ -501,13 +501,13 @@ footer {
   gap: 0.9rem;
   padding: 1rem 1.4rem;
   cursor: pointer;
-  background: rgba(201,168,76,0.04);
+  background: rgba(193,95,60,0.04);
   user-select: none;
   transition: background 0.2s;
 }
 
 .folder-header:hover {
-  background: rgba(201,168,76,0.09);
+  background: rgba(193,95,60,0.09);
 }
 
 /* Folder emoji icon */
@@ -550,7 +550,7 @@ footer {
 .folder-body {
   display: none;
   padding: 1.25rem;
-  border-top: 1px solid rgba(201,168,76,0.08);
+  border-top: 1px solid rgba(193,95,60,0.08);
 }
 
 .folder-group.open .folder-body {
@@ -566,7 +566,7 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: rgba(0,0,0,0.92);
+  background: rgba(10,8,6,0.92);
   justify-content: center;
   align-items: center;
   cursor: zoom-out;
@@ -592,9 +592,9 @@ footer {
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
+  background: rgba(193,95,60,0.15);
+  border: 1px solid rgba(193,95,60,0.3);
+  color: var(--text);
   font-size: 1.2rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -606,16 +606,16 @@ footer {
   transition: background 0.2s;
   z-index: 1000;
 }
-#lightbox-close:hover { background: rgba(255,255,255,0.2); }
+#lightbox-close:hover { background: rgba(193,95,60,0.3); }
 
 /* Lightbox navigation buttons (prev/next) */
 .lightbox-nav {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.06);
+  background: rgba(193,95,60,0.06);
   color: var(--text);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(193,95,60,0.12);
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
@@ -631,7 +631,7 @@ footer {
 #lightbox-prev { left: 1rem; }
 #lightbox-next { right: 1rem; }
 
-.lightbox-nav:hover { background: rgba(255,255,255,0.14); transform: translateY(-50%) scale(1.05); }
+.lightbox-nav:hover { background: rgba(193,95,60,0.18); transform: translateY(-50%) scale(1.05); }
 .lightbox-nav:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 @media (max-width: 480px) {
