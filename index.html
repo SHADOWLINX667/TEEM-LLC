@@ -18,6 +18,8 @@
        Keep this file as pure structure (HTML only)
   ============================================================ -->
   <link rel="stylesheet" href="teem-llc.css"/>
+  <!-- Modular lightbox styles (kept separate for easier maintenance) -->
+  <link rel="stylesheet" href="teem-llc-lightbox.css"/>
 </head>
 <body>
 
@@ -80,7 +82,7 @@
           <div class="report-icon">📄</div>
           <div class="report-category">Valuation</div>
           <div class="report-title">Lamin Plot Valuation Report</div>
-          <div class="report-date">june 2026</div>
+          <div class="report-date">June 2026</div>
           <a href="Report for Lamin.pdf" class="report-link" target="_blank" rel="noopener noreferrer">View Report →</a>
         </div>
 
@@ -117,111 +119,111 @@
            count, and photo tiles inside.
       ============================================================ -->
 
-      <!-- FOLDER 1 — images 1–8 -->
+      <!-- FOLDER 1 — images 1–24 -->
       <div class="folder-group" id="folder1">
-        <div class="folder-header" onclick="toggleFolder('folder1')">
+        <button class="folder-header" aria-expanded="false" aria-controls="folder1-body" onclick="toggleFolder(this, 'folder1-body')">
           <span class="folder-icon">📁</span>
           <span class="folder-name">Lamin Plot — Set 1</span>
-          <span class="folder-count">24 photos</span>
+          <span class="folder-count">0 photos</span>
           <span class="folder-arrow">▶</span>
-        </div>
-        <div class="folder-body">
+        </button>
+        <div class="folder-body" id="folder1-body">
           <div class="photos-grid">
-            <div class="photo-tile" onclick="openLightbox('image1.jpeg')">
-              <img src="image1.jpeg" alt="image 1">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image1.jpeg" alt="Lamin plot — image 1" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 1</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image2.jpeg')">
-              <img src="image2.jpeg" alt="image 2">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image2.jpeg" alt="Lamin plot — image 2" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 2</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image3.jpeg')">
-              <img src="image3.jpeg" alt="image 3">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image3.jpeg" alt="Lamin plot — image 3" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 3</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image4.jpeg')">
-              <img src="image4.jpeg" alt="image 4">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image4.jpeg" alt="Lamin plot — image 4" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 4</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image5.jpeg')">
-              <img src="image5.jpeg" alt="image 5">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image5.jpeg" alt="Lamin plot — image 5" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 5</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image6.jpeg')">
-              <img src="image6.jpeg" alt="image 6">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image6.jpeg" alt="Lamin plot — image 6" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 6</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image7.jpeg')">
-              <img src="image7.jpeg" alt="image 7">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image7.jpeg" alt="Lamin plot — image 7" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 7</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image8.jpeg')">
-              <img src="image8.jpeg" alt="image 8">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image8.jpeg" alt="Lamin plot — image 8" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 8</span></div>
             </div>
-             <div class="photo-tile" onclick="openLightbox('image9.jpeg')">
-              <img src="image9.jpeg" alt="image 9">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+             <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image9.jpeg" alt="Lamin plot — image 9" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 9</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image10.jpeg')">
-              <img src="image10.jpeg" alt="image 10">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image10.jpeg" alt="Lamin plot — image 10" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 10</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image11.jpeg')">
-              <img src="image11.jpeg" alt="image 11">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image11.jpeg" alt="Lamin plot — image 11" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 11</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image12.jpeg')">
-              <img src="image12.jpeg" alt="image 12">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image12.jpeg" alt="Lamin plot — image 12" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 12</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image13.jpeg')">
-              <img src="image13.jpeg" alt="image 13">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image13.jpeg" alt="Lamin plot — image 13" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 13</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image14.jpeg')">
-              <img src="image14.jpeg" alt="image 14">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image14.jpeg" alt="Lamin plot — image 14" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 14</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image15.jpeg')">
-              <img src="image15.jpeg" alt="image 15">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image15.jpeg" alt="Lamin plot — image 15" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 15</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image16.jpeg')">
-              <img src="image16.jpeg" alt="image 16">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image16.jpeg" alt="Lamin plot — image 16" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 16</span></div>
             </div>
-             <div class="photo-tile" onclick="openLightbox('image17.jpeg')">
-              <img src="image17.jpeg" alt="image 17">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+             <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image17.jpeg" alt="Lamin plot — image 17" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 17</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image18.jpeg')">
-              <img src="image18.jpeg" alt="image 18">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image18.jpeg" alt="Lamin plot — image 18" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 18</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image19.jpeg')">
-              <img src="image19.jpeg" alt="image 19">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image19.jpeg" alt="Lamin plot — image 19" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 19</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image20.jpeg')">
-              <img src="image20.jpeg" alt="image 20">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image20.jpeg" alt="Lamin plot — image 20" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 20</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image21.jpeg')">
-              <img src="image21.jpeg" alt="image 21">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image21.jpeg" alt="Lamin plot — image 21" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 21</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image22.jpeg')">
-              <img src="image22.jpeg" alt="image 22">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image22.jpeg" alt="Lamin plot — image 22" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 22</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image23.jpeg')">
-              <img src="image23.jpeg" alt="image 23">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image23.jpeg" alt="Lamin plot — image 23" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 23</span></div>
             </div>
-            <div class="photo-tile" onclick="openLightbox('image24.jpeg')">
-              <img src="image24.jpeg" alt="image 24">
-              <div class="photo-overlay"><span class="photo-label">lamin plot</span></div>
+            <div class="photo-tile" onclick="openLightbox(this)">
+              <img src="image24.jpeg" alt="Lamin plot — image 24" loading="lazy" width="1200" height="800" style="width:100%;height:100%;object-fit:cover;">
+              <div class="photo-overlay"><span class="photo-label">Lamin plot — image 24</span></div>
             </div>
           </div>
         </div>
@@ -252,92 +254,135 @@
   <button id="lightbox-close" aria-label="Close image">✕</button>
   <img id="lightbox-img" src="" alt=""/>
 </div>
+
 <!-- ============================================================
-     LIGHTBOX SCRIPT
-     openLightbox(src) — sets the image and shows the overlay
-     Clicking the overlay background closes it
-     Clicking the X button closes it
+     GALLERY & LIGHTBOX SCRIPT
+     - accessible folder toggles
+     - dynamic photo counts
+     - lightbox open/close with focus management
+     - prev/next navigation and keyboard support
 ============================================================ -->
 <script>
-  // Opens/closes a folder group
-  function toggleFolder(id) {
-    document.getElementById(id).classList.toggle('open');
+(function(){
+  // small utility
+  function $(sel, ctx){ return (ctx||document).querySelector(sel); }
+  function $all(sel, ctx){ return Array.from((ctx||document).querySelectorAll(sel)); }
+
+  // Make folder headers keyboard accessible and dynamic counts
+  function initFolders(){
+    $all('.folder-group').forEach(function(group){
+      var header = group.querySelector('.folder-header');
+      var body = group.querySelector('.folder-body');
+      var countEl = header.querySelector('.folder-count');
+      var tiles = group.querySelectorAll('.photo-tile');
+      // set count
+      if(countEl) countEl.textContent = tiles.length + (tiles.length === 1 ? ' photo' : ' photos');
+
+      // ensure aria-controls and ids exist
+      if(body && !body.id){ body.id = group.id + '-body'; header.setAttribute('aria-controls', body.id); }
+
+      // keyboard handling for button is automatic since it's a button element
+      header.addEventListener('click', function(e){
+        var expanded = header.getAttribute('aria-expanded') === 'true';
+        header.setAttribute('aria-expanded', String(!expanded));
+        group.classList.toggle('open');
+      });
+
+      header.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); header.click(); }
+      });
+    });
   }
-</script>
 
-<script>
-  // Build a list of image srcs from the gallery (in DOM order)
-  const galleryImages = Array.from(document.querySelectorAll('.photos-grid img'));
-  const imageSrcs = galleryImages.map(img => img.getAttribute('src'));
-  let currentIndex = -1;
-
-  // Opens the lightbox and loads the clicked image (by src)
-  function openLightbox(src) {
-    // find the index of the clicked image
-    currentIndex = imageSrcs.indexOf(src);
-    if (currentIndex === -1) {
-      // fallback: try matching by filename ending
-      currentIndex = imageSrcs.findIndex(s => s && s.endsWith(src));
-    }
-    if (currentIndex === -1) currentIndex = 0; // safety
-
-    showImage();
-    const lb = document.getElementById('lightbox');
-    lb.classList.add('active');
-    lb.setAttribute('aria-hidden', 'false');
-    // focus the close button for keyboard users
-    document.getElementById('lightbox-close').focus();
+  // Build gallery image list in DOM order
+  var galleryImages = [];
+  function rebuildImageList(){
+    galleryImages = $all('.photos-grid img').map(function(img){ return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' }; });
   }
 
-  // Show the image for currentIndex
-  function showImage() {
-    const imgEl = document.getElementById('lightbox-img');
-    if (currentIndex < 0 || currentIndex >= imageSrcs.length) return;
-    imgEl.src = imageSrcs[currentIndex];
+  var currentIndex = -1;
+  var lastTrigger = null;
+
+  // Show current image
+  function showImage(){
+    var imgEl = $('#lightbox-img');
+    if(currentIndex < 0 || currentIndex >= galleryImages.length) return;
+    imgEl.src = galleryImages[currentIndex].src;
     imgEl.alt = galleryImages[currentIndex].alt || '';
   }
 
-  // Navigate previous/next
-  function prevImage() {
-    if (imageSrcs.length === 0) return;
-    currentIndex = (currentIndex - 1 + imageSrcs.length) % imageSrcs.length;
-    showImage();
-  }
-  function nextImage() {
-    if (imageSrcs.length === 0) return;
-    currentIndex = (currentIndex + 1) % imageSrcs.length;
-    showImage();
-  }
+  // Open lightbox with the clicked photo-tile element
+  window.openLightbox = function(tileEl){
+    if(!tileEl) return;
+    rebuildImageList();
+    lastTrigger = tileEl;
+    var img = tileEl.querySelector('img');
+    var src = img ? img.getAttribute('src') : null;
+    currentIndex = galleryImages.findIndex(function(i){ return i.src === src || (src && i.src && i.src.endsWith(src)); });
+    if(currentIndex === -1) currentIndex = 0;
 
-  // Closes the lightbox
-  function closeLightbox() {
-    const lb = document.getElementById('lightbox');
+    showImage();
+    var lb = $('#lightbox');
+    lb.classList.add('active');
+    lb.setAttribute('aria-hidden','false');
+    // focus the close button for keyboard users
+    $('#lightbox-close').focus();
+    // prevent background scrolling when open
+    document.documentElement.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function(){
+    var lb = $('#lightbox');
     lb.classList.remove('active');
-    lb.setAttribute('aria-hidden', 'true');
-    document.getElementById('lightbox-img').src = '';
-  }
+    lb.setAttribute('aria-hidden','true');
+    $('#lightbox-img').src = '';
+    document.documentElement.style.overflow = '';
+    // return focus to the thumbnail that opened it
+    if(lastTrigger && typeof lastTrigger.focus === 'function'){
+      lastTrigger.focus();
+    }
+    lastTrigger = null;
+  };
 
-  // Close when clicking the dark background (but not the image itself)
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
+  window.prevImage = function(){
+    if(galleryImages.length === 0) return;
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    showImage();
+  };
+  window.nextImage = function(){
+    if(galleryImages.length === 0) return;
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    showImage();
+  };
+
+  // click handlers for lightbox UI
+  document.addEventListener('click', function(e){
+    var lb = $('#lightbox');
+    if(!lb) return;
+    if(e.target === lb) { closeLightbox(); }
+  });
+  $('#lightbox-close').addEventListener('click', function(e){ e.stopPropagation(); closeLightbox(); });
+  $('#lightbox-prev').addEventListener('click', function(e){ e.stopPropagation(); prevImage(); });
+  $('#lightbox-next').addEventListener('click', function(e){ e.stopPropagation(); nextImage(); });
+  $('#lightbox-img').addEventListener('click', function(e){ e.stopPropagation(); });
+
+  // keyboard navigation
+  document.addEventListener('keydown', function(e){
+    var lb = $('#lightbox');
+    if(!lb || !lb.classList.contains('active')) return;
+    if(e.key === 'Escape') { closeLightbox(); }
+    if(e.key === 'ArrowLeft') { prevImage(); }
+    if(e.key === 'ArrowRight') { nextImage(); }
   });
 
-  // Prevent clicks on the image or nav buttons from closing the lightbox
-  document.getElementById('lightbox-img').addEventListener('click', function(e) { e.stopPropagation(); });
-  document.getElementById('lightbox-prev').addEventListener('click', function(e) { e.stopPropagation(); prevImage(); });
-  document.getElementById('lightbox-next').addEventListener('click', function(e) { e.stopPropagation(); nextImage(); });
-
-  // Close when clicking the X button
-  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-
-  // Keyboard navigation: Escape closes, ArrowLeft/ArrowRight navigate
-  document.addEventListener('keydown', function(e) {
-    const lb = document.getElementById('lightbox');
-    if (!lb.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'ArrowRight') nextImage();
+  // initialize on DOM ready
+  document.addEventListener('DOMContentLoaded', function(){
+    initFolders();
+    rebuildImageList();
+    // make photo tiles focusable for keyboard users
+    $all('.photo-tile').forEach(function(tile){ tile.setAttribute('tabindex','0'); tile.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(tile); } }); });
   });
+})();
 </script>
 
 </body>
