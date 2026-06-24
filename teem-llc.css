@@ -29,7 +29,11 @@
 ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  scrollbar-gutter: stable;
+}
 
 body {
   background: var(--warm-black);
@@ -37,6 +41,9 @@ body {
   font-family: var(--font-body);
   font-weight: 300;
   line-height: 1.7;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ============================================================
@@ -64,6 +71,7 @@ nav {
   color: var(--terracotta);
   letter-spacing: 0.08em;
   text-decoration: none;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Nav links — scroll to #reports or #photos */
@@ -79,7 +87,7 @@ nav {
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: color 0.2s;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-links a:hover { color: var(--terracotta); }
@@ -174,7 +182,7 @@ nav {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.25s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
@@ -287,6 +295,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
+  contain: layout style paint;
 }
 
 /* Individual report card */
@@ -295,7 +304,7 @@ nav {
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 4px;
   padding: 2rem;
-  transition: border-color 0.25s, transform 0.25s;
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
@@ -307,7 +316,7 @@ nav {
   top: 0; left: 0;
   width: 0; height: 2px;
   background: var(--terracotta);
-  transition: width 0.3s;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .report-card:hover::before { width: 100%; }
 .report-card:hover {
@@ -357,7 +366,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  transition: gap 0.2s;
+  transition: gap 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .report-link:hover { gap: 0.7rem; }
 
@@ -374,6 +383,7 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 200px;
   gap: 1rem;
+  contain: layout style paint;
 }
 
 /* Individual photo tile */
@@ -383,6 +393,7 @@ nav {
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Make some tiles taller for visual variety */
@@ -402,7 +413,7 @@ nav {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   background: linear-gradient(135deg, var(--warm-surface) 0%, #3a3028 100%);
-  transition: transform 0.3s;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .photo-tile:hover .photo-tile-inner { transform: scale(1.03); }
@@ -416,7 +427,7 @@ nav {
   align-items: flex-end;
   padding: 1rem;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .photo-tile:hover .photo-overlay { opacity: 1; }
 
@@ -436,7 +447,7 @@ nav {
   color: var(--cloudy);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: border-color 0.25s, background 0.25s;
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .upload-area:hover {
   border-color: var(--terracotta);
@@ -502,6 +513,7 @@ footer {
   border-radius: 4px;
   margin-bottom: 1.25rem;
   overflow: hidden;
+  contain: content;
 }
 
 /* Clickable header row */
@@ -513,7 +525,12 @@ footer {
   cursor: pointer;
   background: rgba(193,95,60,0.04);
   user-select: none;
-  transition: background 0.2s;
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
 }
 
 .folder-header:hover {
@@ -548,7 +565,7 @@ footer {
 .folder-arrow {
   font-size: 0.7rem;
   color: var(--terracotta);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   margin-left: 0.5rem;
 }
 
@@ -613,7 +630,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
 }
 #lightbox-close:hover { background: rgba(193,95,60,0.3); }
@@ -635,7 +652,7 @@ footer {
   font-size: 1.6rem;
   cursor: pointer;
   z-index: 1000;
-  transition: background 0.15s, transform 0.12s;
+  transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
 }
 #lightbox-prev { left: 1rem; }
