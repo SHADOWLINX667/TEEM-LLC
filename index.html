@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TEEM LLC</title>
+  <title>TEEM LLC | Trusted family enterprise in The Gambia</title>
+  <meta name="description" content="TEEM LLC is a family enterprise in The Gambia offering trusted reports, project galleries, and business services." />
 
   <!-- ============================================================
        FONTS
@@ -34,15 +35,22 @@
        Fixed top bar — links scroll to each section on the page.
        Add more <li> items here as the site grows.
   ============================================================ -->
-  <nav>
-    <a href="#hero" class="nav-logo">TEEM</a>
-    <ul class="nav-links">
+  <nav class="site-nav">
+    <div class="nav-brand">
+      <img src="TEEM Logo.png" alt="TEEM LLC logo" class="nav-logo-image">
+      <a href="#hero" class="nav-logo">TEEM</a>
+    </div>
+    
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">☰</button>
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="#reports">Reports</a></li>
       <li><a href="#photos">Photos</a></li>
       <li><a href="mailto:info@emetva.com">Contact</a></li>
+      <li><button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">Dark mode</button></li>
     </ul>
   </nav>
 
+  <main>
 
   <!-- ============================================================
        HERO SECTION
@@ -50,11 +58,16 @@
        Edit the tagline text here to change what it says.
   ============================================================ -->
   <section id="hero">
+    <h1 class="sr-only">TEEM LLC — Family enterprise built on trust in The Gambia</h1>
     <p class="hero-eyebrow">Established XXXX · The Gambia</p>
-    <h1 class="hero-title">TEEM <span>LLC</span></h1>
+    <div class="hero-title" id="heroLogoWrapper">
+      <img src="TEEM Logo.png" alt="TEEM LLC logo" class="hero-logo-image" id="heroLogo" width="1439" height="1522">
+    </div>
     <p class="hero-tagline">A family enterprise built on trust, vision, and enduring partnerships.</p>
     <div class="hero-cta">
-     
+      <a href="#reports" class="btn btn-primary">View Reports</a>
+    </div>
+
     <!-- Animated arrow telling the user to scroll down -->
     <div class="scroll-hint">
       <span>Scroll</span>
@@ -124,7 +137,7 @@
 
       <!-- FOLDER 1 — images 1–24 -->
       <div class="folder-group" id="folder1">
-        <button class="folder-header" aria-expanded="false" aria-controls="folder1-body" onclick="toggleFolder(this, 'folder1-body')">
+        <button type="button" class="folder-header" aria-expanded="false" aria-controls="folder1-body">
           <span class="folder-icon">📁</span>
           <span class="folder-name">Lamin Plot — Set 1</span>
           <span class="folder-count">0 photos</span>
@@ -240,6 +253,8 @@
        FOOTER
        Update the year, company name, and email as needed.
   ============================================================ -->
+  </main>
+
   <footer>
     <div class="footer-brand">TEEM LLC</div>
     <div>© 2025 TEEM LLC · The Gambia · All rights reserved</div>
@@ -255,138 +270,9 @@
   <button id="lightbox-prev" class="lightbox-nav" aria-label="Previous image">‹</button>
   <button id="lightbox-next" class="lightbox-nav" aria-label="Next image">›</button>
   <button id="lightbox-close" aria-label="Close image">✕</button>
-  <img id="lightbox-img" src="" alt=""/>
+  <img id="lightbox-img" src="" alt="Photo preview" width="1200" height="800" loading="lazy"/>
 </div>
 
-<!-- ============================================================
-     GALLERY & LIGHTBOX SCRIPT
-     - accessible folder toggles
-     - dynamic photo counts
-     - lightbox open/close with focus management
-     - prev/next navigation and keyboard support
-============================================================ -->
-<script>
-(function(){
-  // small utility
-  function $(sel, ctx){ return (ctx||document).querySelector(sel); }
-  function $all(sel, ctx){ return Array.from((ctx||document).querySelectorAll(sel)); }
-
-  // Make folder headers keyboard accessible and dynamic counts
-  function initFolders(){
-    $all('.folder-group').forEach(function(group){
-      var header = group.querySelector('.folder-header');
-      var body = group.querySelector('.folder-body');
-      var countEl = header.querySelector('.folder-count');
-      var tiles = group.querySelectorAll('.photo-tile');
-      // set count
-      if(countEl) countEl.textContent = tiles.length + (tiles.length === 1 ? ' photo' : ' photos');
-
-      // ensure aria-controls and ids exist
-      if(body && !body.id){ body.id = group.id + '-body'; header.setAttribute('aria-controls', body.id); }
-
-      // keyboard handling for button is automatic since it's a button element
-      header.addEventListener('click', function(e){
-        var expanded = header.getAttribute('aria-expanded') === 'true';
-        header.setAttribute('aria-expanded', String(!expanded));
-        group.classList.toggle('open');
-      });
-
-      header.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); header.click(); }
-      });
-    });
-  }
-
-  // Build gallery image list in DOM order
-  var galleryImages = [];
-  function rebuildImageList(){
-    galleryImages = $all('.photos-grid img').map(function(img){ return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' }; });
-  }
-
-  var currentIndex = -1;
-  var lastTrigger = null;
-
-  // Show current image
-  function showImage(){
-    var imgEl = $('#lightbox-img');
-    if(currentIndex < 0 || currentIndex >= galleryImages.length) return;
-    imgEl.src = galleryImages[currentIndex].src;
-    imgEl.alt = galleryImages[currentIndex].alt || '';
-  }
-
-  // Open lightbox with the clicked photo-tile element
-  window.openLightbox = function(tileEl){
-    if(!tileEl) return;
-    rebuildImageList();
-    lastTrigger = tileEl;
-    var img = tileEl.querySelector('img');
-    var src = img ? img.getAttribute('src') : null;
-    currentIndex = galleryImages.findIndex(function(i){ return i.src === src || (src && i.src && i.src.endsWith(src)); });
-    if(currentIndex === -1) currentIndex = 0;
-
-    showImage();
-    var lb = $('#lightbox');
-    lb.classList.add('active');
-    lb.setAttribute('aria-hidden','false');
-    // focus the close button for keyboard users
-    $('#lightbox-close').focus();
-    // prevent background scrolling when open
-    document.documentElement.style.overflow = 'hidden';
-  };
-
-  window.closeLightbox = function(){
-    var lb = $('#lightbox');
-    lb.classList.remove('active');
-    lb.setAttribute('aria-hidden','true');
-    $('#lightbox-img').src = '';
-    document.documentElement.style.overflow = '';
-    // return focus to the thumbnail that opened it
-    if(lastTrigger && typeof lastTrigger.focus === 'function'){
-      lastTrigger.focus();
-    }
-    lastTrigger = null;
-  };
-
-  window.prevImage = function(){
-    if(galleryImages.length === 0) return;
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    showImage();
-  };
-  window.nextImage = function(){
-    if(galleryImages.length === 0) return;
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    showImage();
-  };
-
-  // click handlers for lightbox UI
-  document.addEventListener('click', function(e){
-    var lb = $('#lightbox');
-    if(!lb) return;
-    if(e.target === lb) { closeLightbox(); }
-  });
-  $('#lightbox-close').addEventListener('click', function(e){ e.stopPropagation(); closeLightbox(); });
-  $('#lightbox-prev').addEventListener('click', function(e){ e.stopPropagation(); prevImage(); });
-  $('#lightbox-next').addEventListener('click', function(e){ e.stopPropagation(); nextImage(); });
-  $('#lightbox-img').addEventListener('click', function(e){ e.stopPropagation(); });
-
-  // keyboard navigation
-  document.addEventListener('keydown', function(e){
-    var lb = $('#lightbox');
-    if(!lb || !lb.classList.contains('active')) return;
-    if(e.key === 'Escape') { closeLightbox(); }
-    if(e.key === 'ArrowLeft') { prevImage(); }
-    if(e.key === 'ArrowRight') { nextImage(); }
-  });
-
-  // initialize on DOM ready
-  document.addEventListener('DOMContentLoaded', function(){
-    initFolders();
-    rebuildImageList();
-    // make photo tiles focusable for keyboard users
-    $all('.photo-tile').forEach(function(tile){ tile.setAttribute('tabindex','0'); tile.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(tile); } }); });
-  });
-})();
-</script>
-
+<script src="teem-llc.js" defer></script>
 </body>
 </html>

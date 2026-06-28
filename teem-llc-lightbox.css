@@ -5,6 +5,7 @@
   --lightbox-button-bg: rgba(255,255,255,0.06);
   --lightbox-button-bg-hover: rgba(255,255,255,0.14);
   --lightbox-button-border: rgba(255,255,255,0.08);
+  --lightbox-button-text: var(--color-btn-text, #ffffff);
   --lightbox-button-size: 3.2rem;
 }
 
@@ -41,7 +42,7 @@
   right: 1.25rem;
   background: rgba(255,255,255,0.09);
   border: 1px solid rgba(255,255,255,0.16);
-  color: white;
+  color: var(--lightbox-button-text);
   font-size: 1.1rem;
   width: 2.6rem;
   height: 2.6rem;
@@ -54,7 +55,7 @@
   z-index: 10010;
 }
 #lightbox-close:hover { background: rgba(255,255,255,0.22); transform: scale(1.03); }
-#lightbox-close:focus { outline: 2px solid var(--gold); outline-offset: 3px; }
+#lightbox-close:focus { outline: 2px solid var(--color-accent, #c1622a); outline-offset: 3px; }
 
 /* Prev/Next nav buttons */
 .lightbox-nav {
@@ -62,7 +63,7 @@
   top: 50%;
   transform: translateY(-50%);
   background: var(--lightbox-button-bg);
-  color: var(--text, #fff);
+  color: var(--lightbox-button-text);
   border: 1px solid var(--lightbox-button-border);
   width: var(--lightbox-button-size);
   height: var(--lightbox-button-size);
@@ -84,7 +85,7 @@
   transform: translateY(-50%) scale(1.05);
 }
 .lightbox-nav:focus {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--color-accent, #c1622a);
   outline-offset: 4px;
 }
 
